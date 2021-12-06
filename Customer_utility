@@ -1,0 +1,84 @@
+import sys
+import mysql.connector
+from Mysql_connector import *
+
+class Customer_utility:
+
+    def insert_cust_record(self):
+
+            custId = int(input("enter customer id:"))
+            custName = (input("enter customer name:"))
+            custDescription = (input("enter customer discription:"))
+            custLocation = (input("enter customer location:"))
+
+            query = "insert into customer( custId , custName ,custDescription , custLocation) values({},'{}','{}','{}')".format(
+                custId, custName, custDescription, custLocation)
+            Mysql_connector.mycursor.execute(query)
+
+
+
+    def find_cust_detail(self):
+
+            Mysql_connector.mycursor.execute("select * from pythondb.customer")
+            for i in Mysql_connector.mycursor:
+                print(i)
+
+
+    
+    def find_detail(self):
+            Mysql_connector.mycursor.execute("select custId, custName from customer")
+            for i in Mysql_connector.mycursor:
+                print(i)
+
+
+    def user_attchedto_cust(self):
+
+            Mysql_connector.mycursor.execute("select * from customer c join user u on c.custId = u.custId")
+            for i in Mysql_connector.mycursor:
+                print(i)
+
+
+    def details_location(self):
+
+            Mysql_connector.mycursor.execute("select  custName from customer where custLocation='Delhi'")
+            for i in Mysql_connector.mycursor:
+                print(i)
+
+
+    def name_start_with_H(self):
+
+            Mysql_connector.mycursor.execute(" select * from customer where custName like 'H%'")
+            for i in Mysql_connector.mycursor:
+                print(i)
+
+
+    def sorting_order(self):
+
+            Mysql_connector.mycursor.execute(" select * from user group by userId order by userId desc")
+            for i in Mysql_connector.mycursor:
+                print(i)
+
+
+    def list_user_customer(self):
+
+            Mysql_connector.mycursor.execute(
+                " select userId,userFirstName,userLastName,userMobile,userEmail,custName,custLocation from customer c join user u on c.custId = u.custId")
+            for i in Mysql_connector.mycursor:
+                print(i)
+
+
+    def average_count(self):
+
+            Mysql_connector.mycursor.execute(" select avg(*) from customer c join user u on c.custId = u.custId where  custLocation='Delhi'")
+            for i in Mysql_connector.mycursor:
+                print(i)
+
+
+    def total_count(self):
+
+            Mysql_connector.mycursor.execute(
+                " select count(*) from customer c join user u on c.custId = u.custId where  custLocation='Delhi'")
+            for i in Mysql_connector.mycursor:
+                print(i)
+
+
