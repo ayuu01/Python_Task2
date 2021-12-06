@@ -15,3 +15,10 @@ class User_utility:
                 userId,custId, userFirstName,userLastName,userMobile,userEmail)
 
             Mysql_connector.mycursor.execute(query)
+            
+            
+    def find_user_detail(self):
+
+            Mysql_connector.mycursor.execute("select * from pythondb.user")
+            for i in Mysql_connector.mycursor:
+                print(i)
