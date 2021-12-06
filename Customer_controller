@@ -1,0 +1,62 @@
+
+import sys
+from Customer_utility import *
+from User_Utility import *
+
+object= Customer_utility()
+object_user= User_Utility()
+
+def menu():
+   while True:
+      print("------------------------------------------------------------------------------");
+
+      print("1. List All the Customers Details");
+      print("2. List All the Users Details");
+      print("3. List All the Customers with following details - name and customer id");
+      print("4. Find no of Users attached to a customer");
+      print("5. List All the Customers whose location is 'Delhi'");
+      print("6. List All the Customers whose name start with Alphabet 'H'");
+      print("7. List All the Users in sorting order of user count (descending order)");
+      print("8. List All the Users with their customer name and location");
+      print("9. Find Average user count attached to Customer for location Delhi");
+      print("10. Find Total user count attached to Customer for location Delhi");
+      print("11. Insert Customers Details");
+      print("12. Insert User Details");
+      print("13. Exit.");
+
+      choice=int(input("Enter Your Choice: "))
+
+      if(choice ==1):
+          object.find_cust_detail()
+      elif(choice == 2):
+          object.find_user_detail()
+      elif(choice == 3):
+          object.find_detail()
+      elif (choice == 4):
+          object.user_attchedto_cust()
+      elif (choice == 5):
+          object.details_location()
+      elif (choice == 6):
+          object.name_start_with_H()
+      elif (choice == 7):
+          object.user_sorting_order()
+      elif (choice == 8):
+          object.list_user()
+      elif (choice == 9):
+          object.average_user_count()
+      elif (choice == 10):
+          object.total_user_count()
+      elif (choice == 11):
+          object.insert_cust_record()
+      elif (choice == 12):
+          object_user.insert_user_record()
+      elif (choice == 13):
+          sys.exit()
+      else:
+          print("Wrong Choice")
+
+
+menu()
+
+
+
