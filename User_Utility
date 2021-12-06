@@ -11,7 +11,7 @@ class User_utility:
             userMobile= (input("enter user mobile number:"))
             userEmail=(input("enter user email:"))
 
-            query = "insert into customer(userId, custId , userFirstName ,userLastName, userMobile , userEmail) values({},{},'{}','{}','{}','{}')".format(
+            query = "insert into user(userId, custId , userFirstName ,userLastName, userMobile , userEmail) values({},{},'{}','{}','{}','{}')".format(
                 userId,custId, userFirstName,userLastName,userMobile,userEmail)
 
             Mysql_connector.mycursor.execute(query)
