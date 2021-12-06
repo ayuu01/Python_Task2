@@ -1,0 +1,42 @@
+======================TASK 1==================
+1) slice list into 3 equals parts and reverse each part.
+2) concatenate two lists index-wise i.e. input lists = ['te','inp'] and ['st','ut'] output list = ['test', 'input']
+
+EmpId			EmpName		Salary
+====================================================
+101			ABC abc		10000
+102			XYZ xyz        	20000
+102			XYZ xyz        	20000
+
+
+3) Print all details of employees in descending order of salary
+4) Store All the Employee List using EmpId as a key
+ i.e.
+ {'101':{'EmpId':101,'EmpName':'ABC','Salary':10000}}
+5) Remove element if EmpId is duplicate
+6) Update eployee salary for EmpId 101
+7) Search employee whose EmpId is 101 using lambda function
+8) update the details of employees by splitting empName into firstName and lastName
+i.e. :{'EmpId':101,'FirstName':'ABC','LastName': 'abc','Salary':10000}
+
+
+
+==================TASK 2=================
+Using mysql.connector
+
+Create a database
+1) Customer Table: customer id, customer name,description, location
+2) User Table: user id, customer id,first name, last name, mobile, email
+==========
+
+1. List All the Customers with following details - name and customer id
+2. Find no of users attached to a customer
+2. List All the Customers which is attached to any user
+3. List All the Customers whose location is 'Delhi'
+4. List All the Customers whose name start with Alphabet 'H'
+5. List All the Users in sorting order of user count (descending order)
+6. List All the Users with their customer name and location
+7. Find Average user count attached to Customer for location Delhi
+8. Find Total user count attached to Customer for location Delhi
+
+
