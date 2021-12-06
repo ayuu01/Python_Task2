@@ -1,0 +1,17 @@
+from Mysql_connector import *
+
+class User_utility:
+
+    def insert_user_record(self):
+        
+            userId = int(input("enter user id:"))
+            custId = int(input("enter customer id:"))
+            userFirstName= (input("enter user first name:"))
+            userLastName= (input("enter user last name:"))
+            userMobile= (input("enter user mobile number:"))
+            userEmail=(input("enter user email:"))
+
+            query = "insert into customer(userId, custId , userFirstName ,userLastName, userMobile , userEmail) values({},{},'{}','{}','{}','{}')".format(
+                userId,custId, userFirstName,userLastName,userMobile,userEmail)
+
+            Mysql_connector.mycursor.execute(query)
